@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://adsd.boqin-tech.com/sitemap.xml
+Sitemap: https://www.boqin-tech.com/sitemap.xml

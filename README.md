@@ -1,7 +1,7 @@
 # Ad Data Insights — company website
 
 Static website for the Ad Data Insights application, prepared for a **TikTok Ads (Marketing API) developer
-account application**. Deployed on **GitHub Pages** at `https://adsd.boqin-tech.com`.
+account application**. Deployed on **GitHub Pages** at `https://www.boqin-tech.com`.
 
 Seven HTML pages, no build step, no JavaScript, no external fonts or trackers:
 
@@ -45,8 +45,8 @@ Tokens are consumed on the first run. To start over, `git checkout -- .` restore
 | --- | --- |
 | `COMPANY_NAME` | English company name shown on the site: `Boqin Technology Co., Ltd.` (translation of 播琴科技有限公司 — replace with the registered English name if the licence has one) |
 | `COMPANY_NAME_LOCAL` | Local-language name; same value here |
-| `EMAIL` | **Must share the registrable domain with the website.** `daizhenghui@boqin-tech.com` and `adsd.boqin-tech.com` both sit on `boqin-tech.com`, so the existing Tencent Exmail mailbox is fine |
-| `DOMAIN` | `adsd.boqin-tech.com` |
+| `EMAIL` | **Must share the registrable domain with the website.** `daizhenghui@boqin-tech.com` and `www.boqin-tech.com` both sit on `boqin-tech.com`, so the existing Tencent Exmail mailbox is fine |
+| `DOMAIN` | `www.boqin-tech.com` |
 | `HOSTING_PROVIDER` | `GitHub, Inc.` — named in the Privacy Policy subprocessor table |
 
 Registration number, registered office, jurisdiction and telephone were deliberately removed from every page
@@ -66,22 +66,24 @@ TikTok's rules for the company website on a developer profile require a site tha
 - matching the company email domain.
 
 `https://boqin-tech.github.io/ads-data/` fails the "domain the company owns" test, and so does any
-`*.pages.dev` URL. The site is served from `https://adsd.boqin-tech.com/` — a subdomain of a domain the
+`*.pages.dev` URL. The site is served from `https://www.boqin-tech.com/` — a subdomain of a domain the
 company owns and the same registrable domain as the company email.
 
 ## 3. Deploy on GitHub Pages
 
-The repo is already wired for Pages: `CNAME` contains `adsd.boqin-tech.com`, and `.nojekyll` turns off Jekyll
+The repo is already wired for Pages: `CNAME` contains `www.boqin-tech.com`, and `.nojekyll` turns off Jekyll
 processing. To redeploy:
 
 1. Push to `main`; Pages rebuilds on every push.
 2. Repo → **Settings → Pages → Build and deployment**: **Deploy from a branch**, branch `main`, folder `/ (root)`.
-3. **Custom domain** `adsd.boqin-tech.com` — the same value as the `CNAME` file.
-4. At GoDaddy: **DNS → Add record**, type **CNAME**, name `adsd`, value `boqin-tech.github.io`, TTL 1 hour.
-   Delete any existing A record for `adsd` first. Do not touch MX, SPF or TXT — those serve the Tencent
-   Exmail mailbox on `boqin-tech.com`.
-5. Wait for GitHub's DNS check to pass, then enable **Enforce HTTPS**. Certificate issuance can take up to
-   24 hours.
+3. **Custom domain** `www.boqin-tech.com` — the same value as the `CNAME` file.
+4. At GoDaddy: **DNS → Add record**, type **CNAME**, name `www`, value `boqin-tech.github.io`, TTL 1 hour.
+   Delete any existing A/AAAA record for `www` first.
+5. Root domain: add four **A** records for `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`,
+   `185.199.111.153`, so `boqin-tech.com` 301s to `www`. Do not touch MX, SPF, DKIM or TXT — those serve
+   the Tencent Exmail mailbox on `boqin-tech.com`.
+6. Wait for GitHub's DNS check to pass, then enable **Enforce HTTPS**. Certificate issuance for `www` can
+   take up to 24 hours; the apex redirect works once the A records resolve.
 
 GitHub Pages serves plain files, so every internal link, canonical URL and sitemap entry uses `.html`
 (`/about.html`, `/privacy.html`). It does **not** rewrite `/about` to `/about.html`; that is why the earlier
@@ -93,7 +95,7 @@ still work (Cloudflare 301s them to the clean form).
 
 Work through [`TIKTOK-CHECKLIST.md`](TIKTOK-CHECKLIST.md). The short version:
 
-- [ ] Site live on `adsd.boqin-tech.com` over HTTPS, no login required.
+- [ ] Site live on `www.boqin-tech.com` over HTTPS, no login required.
 - [ ] Company name, registration number and address identical on the site, in the developer profile and on the
       business licence.
 - [ ] Privacy Policy and Terms of Service in the top navigation on every page (they are).
