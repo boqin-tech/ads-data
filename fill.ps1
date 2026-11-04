@@ -52,7 +52,7 @@ foreach ($name in @('sitemap.xml', 'robots.txt')) {
 $changed = 0
 
 foreach ($file in $files) {
-    $text = Get-Content -LiteralPath $file.FullName -Raw
+    $text = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8
     $original = $text
 
     foreach ($key in $required) {
@@ -93,7 +93,7 @@ else {
 $broken = @()
 $htmlFiles = Get-ChildItem -LiteralPath $root -Filter '*.html' -File
 foreach ($file in $htmlFiles) {
-    $text = Get-Content -LiteralPath $file.FullName -Raw
+    $text = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8
     foreach ($match in [regex]::Matches($text, 'href="([^"]+)"')) {
         $href = $match.Groups[1].Value
         if ($href -match '^(https?:|mailto:|tel:|#)') { continue }
