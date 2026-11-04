@@ -1,0 +1,13 @@
+{
+  "_instructions": "Fill in every value below, then run: powershell -ExecutionPolicy Bypass -File .\\fill.ps1 — Values are inserted verbatim into the HTML. Use the exact legal name and registration number from your certificate of incorporation.",
+  "_email_note": "Use an address on the SAME domain as the website. The TikTok developer profile email, the site contact and the business licence should all point at the same company. Create daizhenghui@boqin-technology.com with Cloudflare Email Routing before submitting (see DEPLOY-CLOUDFLARE.md).",
+  "COMPANY_NAME": "",
+  "COMPANY_NAME_LOCAL": "",
+  "REG_NUMBER": "",
+  "JURISDICTION": "",
+  "REG_ADDRESS": "",
+  "EMAIL": "daizhenghui@boqin-technology.com",
+  "PHONE": "",
+  "DOMAIN": "boqin-technology.com",
+  "HOSTING_PROVIDER": "Cloudflare, Inc."
+}

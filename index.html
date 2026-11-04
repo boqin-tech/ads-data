@@ -3,104 +3,265 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A tool for retrieving, organizing, and analyzing advertising performance data for authorized accounts.">
-  <title>Ad Data Insights</title>
-  <style>
-    :root { color-scheme: light; --ink:#172033; --muted:#596579; --line:#e3e8ef; --accent:#2457d6; --soft:#f5f7fb; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; color:var(--ink); line-height:1.65; background:#fff; }
-    header { border-bottom:1px solid var(--line); background:#fff; }
-    .nav,.wrap { width:min(1060px, calc(100% - 40px)); margin:auto; }
-    .nav { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
-    .brand { font-weight:750; letter-spacing:-.03em; font-size:1.15rem; }
-    nav a { color:var(--muted); text-decoration:none; margin-left:22px; font-size:.95rem; }
-    nav a:hover { color:var(--accent); }
-    .hero { background:linear-gradient(135deg,#f5f8ff,#fff 65%); padding:82px 0 74px; }
-    .eyebrow { color:var(--accent); font-size:.82rem; font-weight:750; text-transform:uppercase; letter-spacing:.12em; }
-    h1 { max-width:780px; font-size:clamp(2.3rem,6vw,4.2rem); line-height:1.08; letter-spacing:-.055em; margin:16px 0 20px; }
-    .lead { max-width:720px; font-size:1.15rem; color:var(--muted); }
-    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
-    .btn { display:inline-block; padding:11px 17px; border-radius:10px; text-decoration:none; font-weight:650; border:1px solid var(--line); color:var(--ink); }
-    .btn.primary { background:var(--accent); border-color:var(--accent); color:white; }
-    section { padding:56px 0; }
-    h2 { font-size:1.8rem; line-height:1.2; letter-spacing:-.035em; margin:0 0 14px; }
-    .section-lead { max-width:760px; color:var(--muted); margin:0 0 26px; }
-    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
-    .card { border:1px solid var(--line); border-radius:16px; padding:22px; background:white; }
-    .card h3 { margin:0 0 8px; font-size:1.05rem; }
-    .card p { margin:0; color:var(--muted); font-size:.96rem; }
-    .soft { background:var(--soft); }
-    .notice { border-left:3px solid var(--accent); padding:14px 18px; background:#eef3ff; border-radius:0 10px 10px 0; color:#243657; }
-    footer { border-top:1px solid var(--line); padding:24px 0 36px; color:var(--muted); font-size:.9rem; }
-    footer .foot { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; }
-    footer a { color:var(--accent); }
-    @media(max-width:720px) { .grid { grid-template-columns:1fr; } .hero { padding:60px 0; } nav a { margin-left:12px; } }
-  </style>
+  <title>Ad Data Insights — TikTok Ads reporting and analytics</title>
+  <meta name="description" content="Ad Data Insights connects to TikTok Ads through TikTok's official Marketing API to retrieve, organize and analyze advertising performance data for advertiser accounts you are authorized to manage.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1d4ed8">
+  <link rel="canonical" href="https://[[DOMAIN]]/">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "[[COMPANY_NAME]]",
+    "url": "https://[[DOMAIN]]/",
+    "email": "[[EMAIL]]",
+    "telephone": "[[PHONE]]",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[[REG_ADDRESS]]"
+    },
+    "description": "Advertising data retrieval and analytics software for authorized advertiser accounts."
+  }
+  </script>
 </head>
 <body>
-  <header>
-    <div class="nav">
-      <div class="brand">Ad Data Insights</div>
-      <nav aria-label="Main navigation">
-        <a href="#features">Features</a>
-        <a href="#privacy">Privacy</a>
-        <a href="privacy.html">Privacy Policy</a>
-      </nav>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="./">Ad Data Insights<span>by [[COMPANY_NAME]]</span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="./#product" aria-current="page">Product</a>
+      <a href="./#security">Security</a>
+      <a href="about">Company</a>
+      <a href="contact">Contact</a>
+      <a href="privacy">Privacy Policy</a>
+      <a href="terms">Terms of Service</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">TikTok Ads reporting</p>
+      <h1>The performance data behind your TikTok Ads, finally in one place.</h1>
+      <p class="lead">
+        Ad Data Insights is a reporting and analytics application for advertisers and agencies.
+        After an authorized user grants access through TikTok's official Marketing API, the application
+        retrieves advertising data for that account, organizes it by campaign, ad group, ad and date,
+        and turns it into reports you can review and export.
+      </p>
+      <div class="btn-row">
+        <a class="btn primary" href="./#how">See how it works</a>
+        <a class="btn" href="contact">Talk to us</a>
+      </div>
+      <div class="hero-meta">
+        <span>Read-only access</span>
+        <span>OAuth 2.0 authorization</span>
+        <span>Ad data is never resold</span>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <div class="eyebrow">Advertising analytics</div>
-        <h1>Understand your advertising performance with clearer data.</h1>
-        <p class="lead">Ad Data Insights is a data utility designed to retrieve, organize, and analyze advertising performance information from advertising platforms that an authorized user connects. It helps users review campaign results and make better-informed decisions.</p>
-        <div class="actions">
-          <a class="btn primary" href="#features">Explore capabilities</a>
-          <a class="btn" href="privacy.html">Read our Privacy Policy</a>
-        </div>
+  <section id="product">
+    <div class="container">
+      <h2>What the application does</h2>
+      <p class="section-lead">
+        Ad Data Insights is used by advertising account owners and the teams they authorize.
+        It does not create, edit or publish ads, and it does not access TikTok user accounts or organic content.
+      </p>
+      <div class="grid">
+        <article class="card">
+          <h3>Retrieve</h3>
+          <p>Pull advertiser account, campaign, ad group and ad structure together with the performance metrics TikTok exposes through the Marketing API, only for accounts that have authorized the application.</p>
+        </article>
+        <article class="card">
+          <h3>Organize</h3>
+          <p>Normalize metrics and dimensions across accounts and date ranges so that naming differences, currencies and reporting windows do not distort the comparison.</p>
+        </article>
+        <article class="card">
+          <h3>Analyze and report</h3>
+          <p>Build performance reports and trend views, then export them for internal reviews, client reporting or further analysis in your own tools.</p>
+        </article>
       </div>
-    </section>
-
-    <section id="features">
-      <div class="wrap">
-        <h2>What the application does</h2>
-        <p class="section-lead">The application is intended for advertising account owners and authorized users who need a more convenient way to work with their advertising data.</p>
-        <div class="grid">
-          <article class="card">
-            <h3>Data retrieval</h3>
-            <p>Retrieve advertising performance data through platform APIs after an account owner or authorized user grants the required permissions.</p>
-          </article>
-          <article class="card">
-            <h3>Data organization</h3>
-            <p>Organize retrieved information by dimensions such as account, campaign, ad, date, and available performance metrics.</p>
-          </article>
-          <article class="card">
-            <h3>Reporting and analysis</h3>
-            <p>Support performance reporting and analysis to help users understand trends and evaluate advertising results.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="soft" id="privacy">
-      <div class="wrap">
-        <h2>Privacy and authorized access</h2>
-        <p class="section-lead">The application is intended to access only the advertising data and permissions needed for its stated functions. Users should connect only accounts they own or are authorized to manage.</p>
-        <div class="notice">The application does not claim affiliation with or endorsement by Google, Meta, or any other advertising platform. Each platform's own terms and permissions continue to apply.</div>
-        <div class="actions">
-          <a class="btn primary" href="privacy.html">View Privacy Policy</a>
-          <a class="btn" href="mailto:daizhenghui@boqin-tech.com">Contact the developer</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap foot">
-      <span>© <span id="year">2026</span> Ad Data Insights</span>
-      <span><a href="privacy.html">Privacy Policy</a> · Contact: daizhenghui@boqin-tech.com</span>
     </div>
-  </footer>
+  </section>
+
+  <section class="soft" id="how">
+    <div class="container">
+      <h2>How it works</h2>
+      <p class="section-lead">Authorization happens entirely inside TikTok. The application never asks for your TikTok password.</p>
+      <div class="steps">
+        <article class="card">
+          <span class="num">1</span>
+          <h3>Authorize in TikTok</h3>
+          <p>You are redirected to TikTok's authorization page, sign in there, and choose the advertiser account you want to connect. TikTok returns an authorization code to our registered redirect URL.</p>
+        </article>
+        <article class="card">
+          <span class="num">2</span>
+          <h3>Select the account</h3>
+          <p>We exchange the code for an access token, confirm which advertiser account and permissions were granted, and show them to you before any data is retrieved.</p>
+        </article>
+        <article class="card">
+          <span class="num">3</span>
+          <h3>Review and export</h3>
+          <p>Data is retrieved on demand or on a schedule you control. Reports can be reviewed in the application and exported. You can disconnect the account at any time.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="data">
+    <div class="container">
+      <h2>What data we access</h2>
+      <p class="section-lead">
+        We request only the TikTok permission scopes needed to produce reporting. The table below describes
+        the categories of data involved and how long each is kept. The full policy is in our
+        <a href="privacy">Privacy Policy</a>.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th scope="col">Data</th><th scope="col">Why we access it</th><th scope="col">Retention</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Advertiser account identifiers</strong><br>Advertiser ID, account name, Business Center ID</td>
+              <td>Identify which account is connected and keep its data separate from other customers</td>
+              <td>Until you disconnect, plus 30 days</td>
+            </tr>
+            <tr>
+              <td><strong>Campaign structure</strong><br>Campaign, ad group and ad names, IDs, status and settings</td>
+              <td>Group and label performance data correctly in reports</td>
+              <td>Up to 12 months</td>
+            </tr>
+            <tr>
+              <td><strong>Performance metrics</strong><br>Impressions, clicks, spend, conversions, video views, dates</td>
+              <td>Generate the reports and analysis that are the purpose of the application</td>
+              <td>Up to 12 months</td>
+            </tr>
+            <tr>
+              <td><strong>Authorization tokens</strong><br>OAuth access and refresh tokens, granted scopes</td>
+              <td>Make authorized API requests on your behalf</td>
+              <td>Until you revoke access, plus 30 days</td>
+            </tr>
+            <tr>
+              <td><strong>Service logs</strong><br>Request timestamps, IP address, user agent, error details</td>
+              <td>Security, fraud prevention, troubleshooting and audit</td>
+              <td>90 days</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout" style="margin-top:18px">
+        <p>We do not access TikTok user profiles, direct messages, organic content or follower data. We do not sell, rent or resell advertising data, and we do not use it to build audiences or target ads outside the accounts you connected.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="security">
+    <div class="container">
+      <h2>Security and access control</h2>
+      <p class="section-lead">Advertising data belongs to the advertiser. Access is limited to the account that granted it and to the people the customer authorizes.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Encrypted in transit and at rest</h3>
+          <p>TLS for all connections, and encryption at rest for tokens and stored reporting data. Tokens are never written to logs or exposed to the browser.</p>
+        </article>
+        <article class="card">
+          <h3>Least privilege</h3>
+          <p>Only the TikTok scopes required for reporting are requested. Each customer's data is isolated, and staff access is limited, logged and reviewed.</p>
+        </article>
+        <article class="card">
+          <h3>Revocation is immediate</h3>
+          <p>Removing the application in TikTok or disconnecting it in our dashboard stops further API calls. We delete the associated token within 30 days.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="company">
+    <div class="container">
+      <div class="company-card">
+        <div>
+          <h2>Who operates this service</h2>
+          <p class="muted" style="margin-top:0">
+            Ad Data Insights is built and operated by [[COMPANY_NAME]], a software company that develops
+            advertising data tooling. We work directly with advertisers and agencies, and we support the
+            account owners who authorize the application.
+          </p>
+          <p class="small"><a href="about">More about the company</a> · <a href="contact">Contact us</a></p>
+        </div>
+        <dl class="facts">
+          <div><dt>Legal entity</dt><dd>[[COMPANY_NAME]]</dd></div>
+          <div><dt>Registration no.</dt><dd>[[REG_NUMBER]]</dd></div>
+          <div><dt>Registered office</dt><dd>[[REG_ADDRESS]]</dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:[[EMAIL]]">[[EMAIL]]</a></dd></div>
+          <div><dt>Phone</dt><dd>[[PHONE]]</dd></div>
+          <div><dt>Website</dt><dd>https://[[DOMAIN]]</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="cta">
+        <div>
+          <h2>Need TikTok Ads reporting for more than one account?</h2>
+          <p>Tell us how your team works and which accounts you manage. We will walk you through authorization and data handling.</p>
+        </div>
+        <a class="btn" href="contact">Contact us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="./">Ad Data Insights<span>by [[COMPANY_NAME]]</span></a>
+        <p>Reporting and analytics for TikTok Ads accounts you are authorized to manage.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="./#product">Overview</a></li>
+          <li><a href="./#how">How it works</a></li>
+          <li><a href="./#security">Security</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy">Privacy Policy</a></li>
+          <li><a href="terms">Terms of Service</a></li>
+          <li><a href="data-deletion">Data deletion</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about">About us</a></li>
+          <li><a href="contact">Contact</a></li>
+          <li><a href="mailto:[[EMAIL]]">[[EMAIL]]</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 [[COMPANY_NAME]]. All rights reserved.</span>
+      <span>Registered in [[JURISDICTION]] · Registration no. [[REG_NUMBER]]</span>
+    </div>
+    <div class="footer-bottom" style="margin-top:6px;border-top:0;padding-top:0">
+      <span>Ad Data Insights is an independent product. TikTok is a trademark of TikTok Ltd. and ByteDance Ltd. We are not affiliated with, endorsed by or sponsored by TikTok, Google or Meta.</span>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
