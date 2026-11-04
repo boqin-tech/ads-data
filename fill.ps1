@@ -105,13 +105,13 @@ foreach ($file in $htmlFiles) {
         $target = ($href -split '#')[0]
         if ($target -eq '' -or $target -eq './' -or $target -eq '/') { continue }
         $target = $target.TrimStart('/') -replace '/', '\'
-        # Clean URLs on Cloudflare Pages: "privacy" is served from privacy.html
+        # GitHub Pages serves plain .html files; clean URLs are not rewritten there.
         if ($target -notmatch '\.(html|css|svg|png|jpg|jpeg|webp|xml|txt)$') { $target = "$target.html" }
         if (-not (Test-Path -LiteralPath (Join-Path $root $target))) {
             $broken += "$($file.Name) -> $href"
         }
     }
-    if ($text -notmatch 'href="/?privacy"' -or $text -notmatch 'href="/?terms"') {
+    if ($text -notmatch 'href="/?privacy\.html"' -or $text -notmatch 'href="/?terms\.html"') {
         $broken += "$($file.Name) -> missing Privacy Policy or Terms link"
     }
 }

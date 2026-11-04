@@ -1,13 +1,14 @@
 {
-  "_instructions": "Fill in every value below, then run: powershell -ExecutionPolicy Bypass -File .\\fill.ps1 — Values are inserted verbatim into the HTML. Use the exact legal name and registration number from your certificate of incorporation.",
-  "_email_note": "Use an address on the SAME domain as the website. The TikTok developer profile email, the site contact and the business licence should all point at the same company. Create daizhenghui@boqin-technology.com with Cloudflare Email Routing before submitting (see DEPLOY-CLOUDFLARE.md).",
+  "_instructions": "Fill in every value below, then run: powershell -ExecutionPolicy Bypass -File .\\fill.ps1 — Values are inserted verbatim into the HTML/sitemap/robots. Use the exact legal name and registration number from your certificate of incorporation.",
+  "_email_note": "The site runs on adsd.boqin-tech.com and the mailbox is @boqin-tech.com — same registrable domain (boqin-tech.com), which is what TikTok checks. Keep the existing Tencent Exmail mailbox; no new domain mail setup is needed.",
+  "_domain_note": "The CNAME file currently says adsd.boqin-tech.com. If that was a typo for ads.boqin-tech.com, change this value, the CNAME file and the GoDaddy record together, then re-run fill.ps1 on a fresh checkout.",
   "COMPANY_NAME": "",
   "COMPANY_NAME_LOCAL": "",
   "REG_NUMBER": "",
   "JURISDICTION": "",
   "REG_ADDRESS": "",
-  "EMAIL": "daizhenghui@boqin-technology.com",
+  "EMAIL": "daizhenghui@boqin-tech.com",
   "PHONE": "",
-  "DOMAIN": "boqin-technology.com",
-  "HOSTING_PROVIDER": "Cloudflare, Inc."
+  "DOMAIN": "adsd.boqin-tech.com",
+  "HOSTING_PROVIDER": "GitHub, Inc."
 }

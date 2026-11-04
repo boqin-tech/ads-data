@@ -1,7 +1,7 @@
 # Ad Data Insights — company website
 
 Static website for the Ad Data Insights application, prepared for a **TikTok Ads (Marketing API) developer
-account application**. Deployed on **Cloudflare Pages** at `https://boqin-technology.com`.
+account application**. Deployed on **GitHub Pages** at `https://adsd.boqin-tech.com`.
 
 Seven HTML pages, no build step, no JavaScript, no external fonts or trackers:
 
@@ -48,10 +48,10 @@ Tokens are consumed on the first run. To start over, `git checkout -- .` restore
 | `REG_NUMBER` | Company registration / business registration number |
 | `JURISDICTION` | `Hong Kong SAR`, `People's Republic of China`, etc. — also used as governing law in the Terms |
 | `REG_ADDRESS` | Full registered office address, including country and postal code |
-| `EMAIL` | **Must be on the same domain as the website.** Default is `daizhenghui@boqin-technology.com` — create it before submitting (see `DEPLOY-CLOUDFLARE.md` §5) |
+| `EMAIL` | **Must share the registrable domain with the website.** `daizhenghui@boqin-tech.com` and `adsd.boqin-tech.com` both sit on `boqin-tech.com`, so the existing Tencent Exmail mailbox is fine |
 | `PHONE` | A reachable business number with country code |
-| `DOMAIN` | `boqin-technology.com` |
-| `HOSTING_PROVIDER` | `Cloudflare, Inc.` — named in the Privacy Policy subprocessor table |
+| `DOMAIN` | `adsd.boqin-tech.com` |
+| `HOSTING_PROVIDER` | `GitHub, Inc.` — named in the Privacy Policy subprocessor table |
 
 ---
 
@@ -66,34 +66,34 @@ TikTok's rules for the company website on a developer profile require a site tha
 - matching the company email domain.
 
 `https://boqin-tech.github.io/ads-data/` fails the "domain the company owns" test, and so does any
-`*.pages.dev` URL. The site must be served from `https://boqin-technology.com/`.
+`*.pages.dev` URL. The site is served from `https://adsd.boqin-tech.com/` — a subdomain of a domain the
+company owns and the same registrable domain as the company email.
 
-## 3. Deploy on Cloudflare Pages
+## 3. Deploy on GitHub Pages
 
-Full steps, DNS records, email routing and verification commands: **[DEPLOY-CLOUDFLARE.md](DEPLOY-CLOUDFLARE.md)**.
+The repo is already wired for Pages: `CNAME` contains `adsd.boqin-tech.com`, and `.nojekyll` turns off Jekyll
+processing. To redeploy:
 
-Short version:
+1. Push to `main`; Pages rebuilds on every push.
+2. Repo → **Settings → Pages → Build and deployment**: **Deploy from a branch**, branch `main`, folder `/ (root)`.
+3. **Custom domain** `adsd.boqin-tech.com` — the same value as the `CNAME` file.
+4. At GoDaddy: **DNS → Add record**, type **CNAME**, name `adsd`, value `boqin-tech.github.io`, TTL 1 hour.
+   Delete any existing A record for `adsd` first. Do not touch MX, SPF or TXT — those serve the Tencent
+   Exmail mailbox on `boqin-tech.com`.
+5. Wait for GitHub's DNS check to pass, then enable **Enforce HTTPS**. Certificate issuance can take up to
+   24 hours.
 
-1. Add `boqin-technology.com` to Cloudflare, change the registrar's nameservers.
-2. Workers & Pages → Create → Pages → Connect to Git → repo `boqin-tech/ads-data`, branch `main`.
-3. Framework preset **None**, build command **empty**, output directory **`/`**.
-4. Custom domains: add `boqin-technology.com` and `www.boqin-technology.com`.
-5. SSL/TLS **Full (strict)**, enable **Always Use HTTPS**, redirect `www` → apex with a Redirect Rule.
-6. Create `daizhenghui@boqin-technology.com` via Cloudflare Email Routing and test it.
-
-Clean URLs: Cloudflare Pages redirects `/privacy.html` to `/privacy`, so every internal link, canonical URL
-and sitemap entry already uses the extension-less form. Local preview therefore needs a server, not `file://`:
-
-```powershell
-python -m http.server 8080
-# http://localhost:8080/
-```
+GitHub Pages serves plain files, so every internal link, canonical URL and sitemap entry uses `.html`
+(`/about.html`, `/privacy.html`). It does **not** rewrite `/about` to `/about.html`; that is why the earlier
+extension-less links returned 404. `_headers` is a Cloudflare-only file and is ignored here, so the security
+headers it defines do not apply on GitHub Pages. If you later move to Cloudflare Pages, the `.html` links
+still work (Cloudflare 301s them to the clean form).
 
 ## 4. Before submitting to TikTok
 
 Work through [`TIKTOK-CHECKLIST.md`](TIKTOK-CHECKLIST.md). The short version:
 
-- [ ] Site live on `boqin-technology.com` over HTTPS, no login required.
+- [ ] Site live on `adsd.boqin-tech.com` over HTTPS, no login required.
 - [ ] Company name, registration number and address identical on the site, in the developer profile and on the
       business licence.
 - [ ] Privacy Policy and Terms of Service in the top navigation on every page (they are).
@@ -123,7 +123,8 @@ the jurisdictions you sell into.
 ## 6. Known limitations
 
 - No cookie banner because the site sets no cookies and loads no third-party resources. If you add analytics,
-  update `privacy.html` §6 and `_headers` first.
+  update `privacy.html` §6 first.
 - The contact page uses `mailto:` links; there is no form backend.
 - `fill.ps1` works in Windows PowerShell 5.1 and PowerShell 7.
-- `_headers` sets HSTS for one year including subdomains. Remove that line if you are not ready for it.
+- `_headers` only takes effect on Cloudflare; GitHub Pages ignores it, so no HSTS/CSP there. If TikTok or a
+  customer requires those headers, put Cloudflare in front of GitHub Pages or host on Cloudflare Pages.
