@@ -43,7 +43,7 @@ Tokens are consumed on the first run. To start over, `git checkout -- .` restore
 
 | Key | Notes |
 | --- | --- |
-| `COMPANY_NAME` | Registered company name. Currently `播琴科技有限公司` — switch to the English registered name if the licence has one |
+| `COMPANY_NAME` | English company name shown on the site: `Boqin Technology Co., Ltd.` (translation of 播琴科技有限公司 — replace with the registered English name if the licence has one) |
 | `COMPANY_NAME_LOCAL` | Local-language name; same value here |
 | `EMAIL` | **Must share the registrable domain with the website.** `daizhenghui@boqin-tech.com` and `adsd.boqin-tech.com` both sit on `boqin-tech.com`, so the existing Tencent Exmail mailbox is fine |
 | `DOMAIN` | `adsd.boqin-tech.com` |

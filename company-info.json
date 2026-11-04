@@ -3,7 +3,7 @@
   "_email_note": "The site runs on adsd.boqin-tech.com and the mailbox is @boqin-tech.com — same registrable domain (boqin-tech.com), which is what TikTok checks. Keep the existing Tencent Exmail mailbox.",
   "_domain_note": "The CNAME file currently says adsd.boqin-tech.com. If that was a typo for ads.boqin-tech.com, change this value, the CNAME file and the GoDaddy record together, then re-run fill.ps1 on a fresh checkout.",
   "_scope_note": "Minimal mode: only the company name and contact email are published. Registration number, registered office, jurisdiction and telephone were removed from the pages on request; add them back before or after a rejection if TikTok asks for full company details.",
-  "COMPANY_NAME": "播琴科技有限公司",
+  "COMPANY_NAME": "Boqin Technology Co., Ltd.",
   "COMPANY_NAME_LOCAL": "播琴科技有限公司",
   "EMAIL": "daizhenghui@boqin-tech.com",
   "DOMAIN": "adsd.boqin-tech.com",
