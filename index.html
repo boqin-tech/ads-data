@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ad Data Insights — Boqin Technology</title>
-  <meta name="description" content="Boqin Technology Co., Ltd. provides business support, operations, internet technology and data analysis capabilities to Chinese financial institutions expanding overseas. Ad Data Insights is its TikTok Ads reporting module.">
+  <meta name="description" content="Boqin Technology Co., Ltd. provides business support, operations, internet technology and data analysis to Chinese financial institutions expanding overseas. Ad Data Insights is its advertising reporting module.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1d4ed8">
   <link rel="canonical" href="https://adsd.boqin-tech.com/">
@@ -29,7 +29,6 @@
     <nav class="site-nav" aria-label="Primary">
       <a href="./#capabilities" aria-current="page">What we do</a>
       <a href="./#product">Ad Data Insights</a>
-      <a href="./#security">Security</a>
       <a href="about.html">Company</a>
       <a href="contact.html">Contact</a>
       <a href="privacy.html">Privacy Policy</a>
@@ -52,7 +51,7 @@
       </p>
       <div class="btn-row">
         <a class="btn primary" href="./#capabilities">What we do</a>
-        <a class="btn" href="./#product">Ad Data Insights</a>
+        <a class="btn" href="contact.html">Talk to us</a>
       </div>
       <div class="hero-meta">
         <span>Business support</span>
@@ -73,139 +72,64 @@
       <div class="grid two">
         <article class="card">
           <h3>Business support</h3>
-          <p>Market entry planning, local operating models and the business processes a new overseas entity needs before it can operate.</p>
+          <p>Market entry assessment, local operating model and the policies and procedures a new overseas entity needs, including coordination with local advisers.</p>
         </article>
         <article class="card">
           <h3>Operations</h3>
-          <p>Day-to-day operational execution: procedures, vendor coordination, reporting cadence and the hand-offs between local and head-office teams.</p>
+          <p>Back-office processes, vendor coordination, reporting cadence and the handover between local and head-office teams.</p>
         </article>
         <article class="card">
           <h3>Internet technology</h3>
-          <p>Web and backend systems, integrations and infrastructure for teams that need to launch services quickly in a new market.</p>
+          <p>Web and backend systems, integrations, cloud infrastructure and access control for teams launching services in a new market.</p>
         </article>
         <article class="card">
           <h3>Data analysis</h3>
-          <p>Data pipelines, reporting and analysis. Advertising data retrieval and reporting is one small part of this capability, delivered through Ad Data Insights.</p>
+          <p>Data pipelines, warehousing, management reporting and analysis. Advertising reporting is one small workload within this capability.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="product">
+  <section id="approach">
     <div class="container">
-      <h2>Ad Data Insights: what the application does</h2>
+      <h2>How we work</h2>
       <p class="section-lead">
-        Ad Data Insights is our reporting module for TikTok Ads. It is used by advertising account owners
-        and the teams they authorize, does not create, edit or publish ads, and does not access TikTok user
-        accounts or organic content.
+        Engagements usually start with the operating model and end with a running function, not a slide deck.
       </p>
-      <div class="grid">
-        <article class="card">
-          <h3>Retrieve</h3>
-          <p>Pull advertiser account, campaign, ad group and ad structure together with the performance metrics TikTok exposes through the Marketing API, only for accounts that have authorized the application.</p>
-        </article>
-        <article class="card">
-          <h3>Organize</h3>
-          <p>Normalize metrics and dimensions across accounts and date ranges so that naming differences, currencies and reporting windows do not distort the comparison.</p>
-        </article>
-        <article class="card">
-          <h3>Analyze and report</h3>
-          <p>Build performance reports and trend views, then export them for internal reviews, client reporting or further analysis in your own tools.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="soft" id="how">
-    <div class="container">
-      <h2>How it works</h2>
-      <p class="section-lead">Authorization happens entirely inside TikTok. The application never asks for your TikTok password.</p>
       <div class="steps">
         <article class="card">
           <span class="num">1</span>
-          <h3>Authorize in TikTok</h3>
-          <p>You are redirected to TikTok's authorization page, sign in there, and choose the advertiser account you want to connect. TikTok returns an authorization code to our registered redirect URL.</p>
+          <h3>Scope</h3>
+          <p>We map the market, the entity and the processes the local team will need, and agree what stays with head office.</p>
         </article>
         <article class="card">
           <span class="num">2</span>
-          <h3>Select the account</h3>
-          <p>We exchange the code for an access token, confirm which advertiser account and permissions were granted, and show them to you before any data is retrieved.</p>
+          <h3>Build</h3>
+          <p>We put the procedures, systems and data flows in place, and test them with the people who will run them.</p>
         </article>
         <article class="card">
           <span class="num">3</span>
-          <h3>Review and export</h3>
-          <p>Data is retrieved on demand or on a schedule you control. Reports can be reviewed in the application and exported. You can disconnect the account at any time.</p>
+          <h3>Operate</h3>
+          <p>We run or support day-to-day operations, reporting and analysis, and adjust as the business grows.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="data">
+  <section class="soft" id="product">
     <div class="container">
-      <h2>What data we access</h2>
+      <h2>Ad Data Insights</h2>
       <p class="section-lead">
-        We request only the TikTok permission scopes needed to produce reporting. The table below describes
-        the categories of data involved and how long each is kept. The full policy is in our
-        <a href="privacy.html">Privacy Policy</a>.
+        Ad Data Insights is a small reporting module within our data practice. It connects to TikTok Ads
+        through TikTok's official Marketing API, retrieves campaign and performance data for accounts the
+        client authorizes, organizes it and exports reports.
       </p>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr><th scope="col">Data</th><th scope="col">Why we access it</th><th scope="col">Retention</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Advertiser account identifiers</strong><br>Advertiser ID, account name, Business Center ID</td>
-              <td>Identify which account is connected and keep its data separate from other customers</td>
-              <td>Until you disconnect, plus 30 days</td>
-            </tr>
-            <tr>
-              <td><strong>Campaign structure</strong><br>Campaign, ad group and ad names, IDs, status and settings</td>
-              <td>Group and label performance data correctly in reports</td>
-              <td>Up to 12 months</td>
-            </tr>
-            <tr>
-              <td><strong>Performance metrics</strong><br>Impressions, clicks, spend, conversions, video views, dates</td>
-              <td>Generate the reports and analysis that are the purpose of the application</td>
-              <td>Up to 12 months</td>
-            </tr>
-            <tr>
-              <td><strong>Authorization tokens</strong><br>OAuth access and refresh tokens, granted scopes</td>
-              <td>Make authorized API requests on your behalf</td>
-              <td>Until you revoke access, plus 30 days</td>
-            </tr>
-            <tr>
-              <td><strong>Service logs</strong><br>Request timestamps, IP address, user agent, error details</td>
-              <td>Security, fraud prevention, troubleshooting and audit</td>
-              <td>90 days</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="callout" style="margin-top:18px">
-        <p>We do not access TikTok user profiles, direct messages, organic content or follower data. We do not sell, rent or resell advertising data, and we do not use it to build audiences or target ads outside the accounts you connected.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="soft" id="security">
-    <div class="container">
-      <h2>Security and access control</h2>
-      <p class="section-lead">Advertising data belongs to the advertiser. Access is limited to the account that granted it and to the people the customer authorizes.</p>
-      <div class="grid">
-        <article class="card">
-          <h3>Encrypted in transit and at rest</h3>
-          <p>TLS for all connections, and encryption at rest for tokens and stored reporting data. Tokens are never written to logs or exposed to the browser.</p>
-        </article>
-        <article class="card">
-          <h3>Least privilege</h3>
-          <p>Only the TikTok scopes required for reporting are requested. Each customer's data is isolated, and staff access is limited, logged and reviewed.</p>
-        </article>
-        <article class="card">
-          <h3>Revocation is immediate</h3>
-          <p>Removing the application in TikTok or disconnecting it in our dashboard stops further API calls. We delete the associated token within 30 days.</p>
-        </article>
-      </div>
+      <p class="muted">
+        The module is read-only: it does not create, edit or publish ads, and it does not access TikTok user
+        accounts or organic content. Data categories, retention and security are documented in the
+        <a href="privacy.html">Privacy Policy</a>. Access can be revoked at any time, with deletion steps on
+        the <a href="data-deletion.html">data deletion page</a>.
+      </p>
     </div>
   </section>
 
@@ -213,8 +137,9 @@
     <div class="container">
       <p class="muted" style="margin:0">
         Ad Data Insights is operated by Boqin Technology Co., Ltd., a technology company that supports
-        financial institutions expanding overseas.
-        Contact: <a href="mailto:daizhenghui@boqin-tech.com">daizhenghui@boqin-tech.com</a> · <a href="contact.html">Contact page</a>
+        financial institutions expanding overseas. Contact:
+        <a href="mailto:daizhenghui@boqin-tech.com">daizhenghui@boqin-tech.com</a> ·
+        <a href="contact.html">Contact page</a>
       </p>
     </div>
   </section>
@@ -223,8 +148,8 @@
     <div class="container">
       <div class="cta">
         <div>
-          <h2>Need TikTok Ads reporting for more than one account?</h2>
-          <p>Tell us how your team works and which accounts you manage. We will walk you through authorization and data handling.</p>
+          <h2>Planning an overseas entity or a new market entry?</h2>
+          <p>Tell us what you are building and which capabilities you need. We will tell you how we can help.</p>
         </div>
         <a class="btn" href="contact.html">Contact us</a>
       </div>
@@ -244,9 +169,8 @@
         <h4>Product</h4>
         <ul>
           <li><a href="./#capabilities">What we do</a></li>
+          <li><a href="./#approach">How we work</a></li>
           <li><a href="./#product">Ad Data Insights</a></li>
-          <li><a href="./#how">How it works</a></li>
-          <li><a href="./#security">Security</a></li>
         </ul>
       </div>
       <div>
