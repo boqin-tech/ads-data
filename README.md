@@ -43,15 +43,15 @@ Tokens are consumed on the first run. To start over, `git checkout -- .` restore
 
 | Key | Notes |
 | --- | --- |
-| `COMPANY_NAME` | Legal name in English, as registered (e.g. `BOQIN TECHNOLOGY CO., LIMITED`) |
-| `COMPANY_NAME_LOCAL` | Legal name in the registration jurisdiction's language |
-| `REG_NUMBER` | Company registration / business registration number |
-| `JURISDICTION` | `Hong Kong SAR`, `People's Republic of China`, etc. — also used as governing law in the Terms |
-| `REG_ADDRESS` | Full registered office address, including country and postal code |
+| `COMPANY_NAME` | Registered company name. Currently `播琴科技有限公司` — switch to the English registered name if the licence has one |
+| `COMPANY_NAME_LOCAL` | Local-language name; same value here |
 | `EMAIL` | **Must share the registrable domain with the website.** `daizhenghui@boqin-tech.com` and `adsd.boqin-tech.com` both sit on `boqin-tech.com`, so the existing Tencent Exmail mailbox is fine |
-| `PHONE` | A reachable business number with country code |
 | `DOMAIN` | `adsd.boqin-tech.com` |
 | `HOSTING_PROVIDER` | `GitHub, Inc.` — named in the Privacy Policy subprocessor table |
+
+Registration number, registered office, jurisdiction and telephone were deliberately removed from every page
+(minimal mode). TikTok may reject the profile for missing company details; if that happens, add the rows back
+to `about.html`, `contact.html`, `privacy.html` and `terms.html` and put the values in `company-info.json`.
 
 ---
 
@@ -114,7 +114,7 @@ privacy policy is worse than a thin one, and reviewers compare the site against 
 | Tokens encrypted at rest, never logged | index, privacy | True? |
 | Retention: 12 months for reporting data, 90 days logs, 30 days after disconnect | index, privacy | Match your actual jobs/backups? |
 | Subprocessor list (`HOSTING_PROVIDER`) | privacy | Complete? Add email, payments, monitoring providers |
-| Governing law = `JURISDICTION` | terms | Confirmed by counsel? |
+| Governing law now reads "the jurisdiction in which the company is registered" | terms | Acceptable until the jurisdiction is confirmed? |
 | Data processing on documented instructions (controller/processor split) | privacy, terms | Correct for your contracts? |
 
 This is not legal advice. Have the Privacy Policy and Terms reviewed against your actual architecture and

@@ -30,8 +30,8 @@ The profile is reviewed on its own. A rejected profile blocks app creation entir
 | Privacy Policy **and** Terms of Service visible in the top navigation (not hidden in a hamburger menu) | Every page's header and footer | ✅ |
 | Both legal links active | `privacy.html`, `terms.html` | ✅ |
 | Privacy Policy covers the actual platform integration | TikTok Marketing API named, data categories and retention tables | ✅ |
-| Real company information: legal name, registration number, registered office, contact | `about.html`, `contact.html`, footer | ⬜ fill `company-info.json` |
-| Reachable contact: email on company domain, phone, postal address | `contact.html` | ⬜ fill phone/address |
+| Real company information: legal name, registration number, registered office, contact | `about.html`, `contact.html`, footer | ⚠️ minimal mode: name + email only; registration number/address/phone intentionally omitted |
+| Reachable contact: email on company domain, phone, postal address | `contact.html` | ⚠️ email only; phone/postal address deferred |
 | Description of how the app uses TikTok data and which permissions | `index.html` §"How it works" and §"What data we access" | ✅ (verify against real scopes) |
 | No claim of TikTok affiliation or endorsement | Footer disclaimer + `about.html` | ✅ |
 | No "in review", "coming soon", "beta" language that implies the integration is not live | Checked | ✅ |

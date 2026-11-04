@@ -25,11 +25,7 @@ $config = Get-Content -LiteralPath $ConfigPath -Raw -Encoding UTF8 | ConvertFrom
 $required = @(
     'COMPANY_NAME',
     'COMPANY_NAME_LOCAL',
-    'REG_NUMBER',
-    'JURISDICTION',
-    'REG_ADDRESS',
     'EMAIL',
-    'PHONE',
     'DOMAIN',
     'HOSTING_PROVIDER'
 )
